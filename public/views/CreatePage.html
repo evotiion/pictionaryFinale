@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Page</title>
+</head>
+
+<body>
+    <h1>Create Lobby</h1><!--Have Center-->
+    <hr>
+    <br>
+    <form action="#">
+
+        <label for="lobbyName">Lobby Name:</label>
+        <input id="lobbyName" type="text" name="lobbyName" value="">
+
+        <label for="password">Password:</label>
+        <input id="password" type="text" name="password" value="">
+
+        <label for="timer">Time Limit</label>
+        <input id="timer" type="number" name="timer" min="20" max="999" value="20">
+
+        <label for="rounds">Rounds</label>
+        <input id="rounds" type="number" name="rounds" min="1" max="100" value="3">
+        <br>
+
+        <input type="reset" name="reset" value="Clear Form">
+        <input type="button" id="createLobby" value="Create Lobby">
+
+    </form>
+    <br>
+    <input type="button" value="Go Back" onclick="window.location.href='/'">
+
+    <script src="js/CreatePage.js"></script>
+</body>
+
+</html>

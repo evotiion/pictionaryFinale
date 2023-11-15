@@ -1,0 +1,71 @@
+* { 
+	overflow: visible; 
+} 
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0f0;
+}
+
+#lobby, #game {
+	text-align: center;
+	padding: 20px;
+}
+
+#lobby h1, #game h1 {
+	font-size: 24px;
+	margin: 10px 0;
+}
+
+#start-game {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+#drawing-canvas {
+	border: 1px solid #000;
+	background-color: #fff;
+}
+
+#chat {
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#chat-history {
+	max-height: 150px;
+	overflow-y: scroll;
+}
+
+#chat-input {
+	width: 70%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#send-button {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 10px;
+	cursor: pointer;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>DrawCipher</title>
+    <!-- <link rel="stylesheet" type="text/css" href="public/views/styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        #lobby,
+        #game {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #lobby h1,
+        #game h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        #start-game {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #playerCount {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+
+        #drawing-canvas {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+
+        #chat {
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #chat-history {
+            max-height: 150px;
+            overflow-y: scroll;
+        }
+
+        #chat-input {
+            width: 70%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #send-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #leaderboard {
+            width: 25%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #round {
+            width: 15%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        #timer {
+            width: 15%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        #isDrawer {
+            width: 15%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table id="leaderboard" border="1">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>Points</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="round">Round:</div>
+    <div id="timer"> Time Left:</div>
+    <div id="isDrawer"> Drawer:</div>
+    <header id="lobby">
+        <h1>Welcome to DrawCipher</h1>
+        <button id="start-game">Start Game</button> <br>
+        <label id="playerCount">Players: </label>
+    </header>
+    <section id="game">
+        <input id="color" type="color" value="35 35 35">
+        <input type="range" id="rating" name="rating" value="5" min="1" max="10" oninput="myFunction1()">
+        <input type="number" id="rating2" name="rating2" value="5" min="1" max="10" onchange="myFunction2()">
+        <div id="difficulty-buttons">
+            <button id="easy-button">Easy</button>
+            <button id="medium-button">Medium</button>
+            <button id="hard-button">Hard</button>
+        </div>
+        <div id="displayWord"></div>
+        <div id="drawing-area">
+            <canvas id="drawing-canvas" width="800" height="400"></canvas>
+        </div>
+        <div id="tools">
+            <button id="clear-button">Clear</button>
+            <button id="free-button">Free</button>
+            <button id="line-button">Line</button>
+            <button id="square-button">Square</button>
+            <button id="squaref-button">Square Fill</button>
+            <button id="circle-button">Circle</button>
+            <button id="circlef-button">Circle Fill</button>
+            <button id="undo-button">Undo</button>
+        </div>
+        <div id="chat">
+            <div id="chat-history">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <div id="user-input">
+                <input type="text" id="chat-input" placeholder="Type your guess">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </section>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

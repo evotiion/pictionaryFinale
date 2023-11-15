@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Game Title Here</h1><!--Have Center (or could be an image banner)-->
+    <hr>
+    <br>
+    <input type="button" value="Join Game" onclick="window.location.href='JoinPage'">
+
+    <br><br>
+    <input type="button" value="Create Game" onclick="window.location.href='CreatePage'">
+
+    <br><br>
+    <label for="username">Username:</label>
+    <input id="username" type="text" name="username" value="" onfocusout="usernameUpdated()">
+
+
+    <script src="js/HomePage.js"></script>
+</body>
+
+</html>
